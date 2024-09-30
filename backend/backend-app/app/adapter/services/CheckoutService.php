@@ -3,11 +3,11 @@
 namespace App\adapter\services;
 
 
-use App\Adapter\Repository\PromotionRepository;
+use App\business\repositories\Promotions;
 use App\stategies\PromotionContext;
 use App\adapter\models\ProductModel;
 use App\business\entities\Product;
-use Illuminate\Support\Facades\Log;
+
 
 
 class CheckoutService
@@ -16,7 +16,7 @@ class CheckoutService
     private $promotionContext;
 
     public function __construct(
-        PromotionRepository $promotionRepository,
+        Promotions $promotionRepository,
         PromotionContext    $promotionContext,
     )
     {
@@ -38,7 +38,7 @@ class CheckoutService
 
             if ($productModel) {
                 $productEntity = new Product($productModel->sku, $productModel->name, $productModel->price, $productModel->id);
-                $promotions = $this->promotionRepository->findByProduct($productEntity);
+                $promotions = $this->promotionRepository->getPromotions($productEntity);
                 if ($promotions->isEmpty()) {
                     // If there are no promotions, add the product's regular price to the total
                     $total += $productEntity->getPrice() * $quantity;
