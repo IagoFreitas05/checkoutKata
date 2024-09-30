@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\adapter\businessUseCases\MealDealPromotionImpl;
 use App\adapter\businessUseCases\MultipricedPromotionImpl;
+use App\business\usecases\MealDealPromotionUseCase;
 use App\business\usecases\MultipricedPromotionUseCase;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(MultipricedPromotionUseCase::class, MultipricedPromotionImpl::class);
+        $this->app->bind(MealDealPromotionUseCase::class, MealDealPromotionImpl::class);
     }
 
     /**

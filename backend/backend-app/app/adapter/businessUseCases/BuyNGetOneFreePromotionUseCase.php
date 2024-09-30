@@ -2,7 +2,8 @@
 namespace App\adapter\businessUseCases;
 
 
-use App\Domain\Entities\Product;
+use App\business\entities\Product;
+use App\business\usecases\io\InputPromotionUseCase;
 
 /**
  * @implements UseCaseInterface<Product, float>
@@ -10,19 +11,13 @@ use App\Domain\Entities\Product;
 class BuyNGetOneFreePromotionUseCase
 {
     /**
-     * Execute the use case.
-     *
-     * @param array $input [Product, count, required quantity for promotion]
-     * @return float Total price with buy-n-get-one-free promotion applied
+     * @param InputPromotionUseCase
      */
     public function execute($input): float
     {
-        [$product, $count, $requiredQuantity] = $input;
+        $freeItems = intdiv($input->quantity, $input->data['required_quantity'] + 1);
+        $paidItems = $input->quantity - $freeItems;
 
-        // Calculate how many items are free
-        $freeItems = intdiv($count, $requiredQuantity + 1);  // Number of free items
-        $paidItems = $count - $freeItems;  // Items the customer pays for
-
-        return $paidItems * $product->getPrice();
+        return $paidItems * $input->product->getPrice();
     }
 }

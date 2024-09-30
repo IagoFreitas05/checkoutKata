@@ -2,15 +2,21 @@
 
 namespace App\stategies;
 
+use App\adapter\businessUseCases\BuyNGetOneFreePromotionUseCase;
 use App\business\entities\Product;
+use App\business\usecases\io\InputPromotionUseCase;
 
 class BuyNGetOneFreePromotionStrategy implements PromotionStrategyInterface
 {
+    private BuyNGetOneFreePromotionUseCase $useCase;
+
+    public function __construct(BuyNGetOneFreePromotionUseCase $useCase)
+    {
+        $this->useCase = $useCase;
+    }
+
     public function execute(Product $product, int $quantity, $data): float
     {
-        $freeItems = intdiv($quantity, $data['required_quantity'] + 1);
-        $paidItems = $quantity - $freeItems;
-
-        return $paidItems * $product->getPrice();
+        return $this->useCase->execute(new InputPromotionUseCase($product, $quantity, $data));
     }
 }
