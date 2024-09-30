@@ -4,8 +4,6 @@ namespace App\stategies;
 
 use App\business\entities\Product;
 
-
-
 interface PromotionStrategyInterface
 {
     /**
