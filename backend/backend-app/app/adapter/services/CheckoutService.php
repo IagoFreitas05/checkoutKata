@@ -7,8 +7,6 @@ use App\business\repositories\Products;
 use App\business\repositories\Promotions;
 use App\stategies\PromotionContext;
 
-
-
 class CheckoutService
 {
     private $promotionRepository;
