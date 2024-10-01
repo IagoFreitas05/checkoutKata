@@ -34,7 +34,7 @@ the project is structured using concepts of clean architecture and SOLID, like: 
 - Setup the database tables
 
 #### 6. Run the command `php artisan php artisan db:seed --class=ProductsAndPromotionsSeeder`
-- Setup the seeder, this will insert the promotions and the products
+- Setup the seeder, this will insert the promotions and the products,  start the project with `php artisan serve` after run the tests with the following command: `./vendor/bin/pest  ` or using your IDE. 
 
 #### 7. Request the endpoint `http://127.0.0.1:8000/api/checkout/total` with the body 
 ```json
