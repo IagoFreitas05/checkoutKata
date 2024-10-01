@@ -12,11 +12,26 @@ use App\business\usecases\MultipricedPromotionUseCase;
  */
 class MultipricedPromotionImpl implements MultipricedPromotionUseCase
 {
-    /**
-     * @param InputPromotionUseCase
-     */
     public function execute($input): float
     {
-        return $input->quantity * ($input->data['discounted_price'] / $input->data['quantity']);
+        $requiredQuantity = $input->data['quantity'];
+        $discountedPrice = $input->data['discounted_price'];
+
+        $pricePerItemDiscounted = $discountedPrice / $requiredQuantity;
+
+        if ($input->quantity < $requiredQuantity) {
+            return $input->quantity * $pricePerItemDiscounted;
+        }
+
+        $total = 0;
+
+        $total += $requiredQuantity * $pricePerItemDiscounted;
+
+        $remainingQuantity = $input->quantity - $requiredQuantity;
+
+        $total += $remainingQuantity * ($input->data['regular_price'] ?? $pricePerItemDiscounted);
+
+        return $total;
     }
+
 }
