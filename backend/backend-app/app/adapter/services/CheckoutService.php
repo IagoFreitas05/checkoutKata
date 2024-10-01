@@ -6,8 +6,6 @@ namespace App\adapter\services;
 use App\business\repositories\Products;
 use App\business\repositories\Promotions;
 use App\stategies\PromotionContext;
-use App\adapter\models\ProductModel;
-use App\business\entities\Product;
 
 
 
