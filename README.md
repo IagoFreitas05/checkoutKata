@@ -1,11 +1,11 @@
-# checkoutKata
-
-## What is implemented by me?
+## Welcome to CheckoutKata -  What is implemented by me?
 
 For this project i implemented a simple system of checkout, with the 3 rules defined: 
  - MealDeal promotion;
  - BuynGetOneFree promotion;
  - Multipriced promotion;
+
+ and one rest endpoint to see everything works
 
 ## project structure
 
@@ -58,3 +58,4 @@ the project is structured using concepts of clean architecture and SOLID, like: 
 #### 1. Implement a react UI;
 #### 2. 100% of covereage ( only main useCases and controller are coverage)
 #### 3. Split the logic off checkout service ( is too long )
+#### 4. Error handling;
