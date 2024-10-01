@@ -5,7 +5,9 @@ namespace App\Providers;
 use App\adapter\businessUseCases\BuyNGetOneFreePromotionUseCase;
 use App\adapter\businessUseCases\MealDealPromotionImpl;
 use App\adapter\businessUseCases\MultipricedPromotionImpl;
+use App\adapter\repository\ProductEloquentImplementation;
 use App\adapter\repository\PromotionEloquentImplementation;
+use App\business\entities\Product;
 use App\business\repositories\Promotions;
 use App\business\usecases\MealDealPromotionUseCase;
 use App\business\usecases\MultipricedPromotionUseCase;
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
         /* repositories */
         $this->app->bind(Promotions::class, PromotionEloquentImplementation::class);
+        $this->app->bind(Product::class, ProductEloquentImplementation::class);
     }
 
     /**
