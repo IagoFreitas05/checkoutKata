@@ -8,6 +8,7 @@ use App\adapter\businessUseCases\MultipricedPromotionImpl;
 use App\adapter\repository\ProductEloquentImplementation;
 use App\adapter\repository\PromotionEloquentImplementation;
 use App\business\entities\Product;
+use App\business\repositories\Products;
 use App\business\repositories\Promotions;
 use App\business\usecases\MealDealPromotionUseCase;
 use App\business\usecases\MultipricedPromotionUseCase;
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
 
         /* repositories */
         $this->app->bind(Promotions::class, PromotionEloquentImplementation::class);
-        $this->app->bind(Product::class, ProductEloquentImplementation::class);
+        $this->app->bind(Products::class, ProductEloquentImplementation::class);
     }
 
     /**
