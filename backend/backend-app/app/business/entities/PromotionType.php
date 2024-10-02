@@ -1,5 +1,4 @@
 <?php
-// app/Domain/Entities/PromotionType.php
 namespace App\business\entities;
 
 class PromotionType

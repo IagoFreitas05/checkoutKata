@@ -21,17 +21,13 @@ class CheckoutController extends Controller
      */
     public function calculateTotal(Request $request)
     {
+        $items = $request->input('items');
 
-        // Get the items from the request (array of objects with sku and quantity)
-        $items = $request->input('items');  // Example: [{'sku': 'A', 'quantity': 3}, {'sku': 'B', 'quantity': 2}, ...]
-
-        // Convert the items to a format that the service can process
         $itemCounts = [];
         foreach ($items as $item) {
             $itemCounts[$item['sku']] = $item['quantity'];
         }
 
-        // Calculate total using CheckoutService
         $total = $this->checkoutService->calculateTotal($itemCounts);
 
         return response()->json(['total' => $total]);

@@ -7,7 +7,6 @@ use App\adapter\businessUseCases\MealDealPromotionImpl;
 use App\adapter\businessUseCases\MultipricedPromotionImpl;
 use App\adapter\repository\ProductEloquentImplementation;
 use App\adapter\repository\PromotionEloquentImplementation;
-use App\business\entities\Product;
 use App\business\repositories\Products;
 use App\business\repositories\Promotions;
 use App\business\usecases\MealDealPromotionUseCase;

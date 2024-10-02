@@ -1,5 +1,5 @@
 <?php
-// app/Infrastructure/Persistence/PromotionEloquentImplementation.php
+
 namespace App\adapter\repository;
 
 use App\business\entities\Product;

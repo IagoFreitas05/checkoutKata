@@ -2,8 +2,6 @@
 
 namespace App\business\repositories;
 
-use App\business\entities\Product;
-
 interface Products
 {
     /**

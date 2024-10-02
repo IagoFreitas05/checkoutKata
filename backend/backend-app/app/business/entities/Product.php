@@ -1,5 +1,5 @@
 <?php
-// app/Domain/Entities/Product.php
+
 namespace App\business\entities;
 
 class Product

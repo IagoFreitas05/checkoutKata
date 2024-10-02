@@ -1,5 +1,5 @@
 <?php
-// app/Domain/Entities/Promotion.php
+
 namespace App\business\entities;
 
 class Promotion
