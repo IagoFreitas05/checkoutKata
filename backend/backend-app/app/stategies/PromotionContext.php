@@ -2,20 +2,19 @@
 
 namespace App\stategies;
 
-use App\adapter\businessUseCases\BuyNGetOneFreePromotionUseCase;
+use App\adapter\businessUseCases\BuyNGetOneFreePromotionImpl;
 use App\business\entities\product;
 use App\business\usecases\MealDealPromotionUseCase;
 use App\business\usecases\MultipricedPromotionUseCase;
-use Illuminate\Support\Facades\Log;
 
 class PromotionContext
 {
     protected $strategies = [];
     private MultipricedPromotionUseCase $multipricedPromotionUseCase;
     private MealDealPromotionUseCase $mealDealPromotionUseCase;
-    private BuyNGetOneFreePromotionUseCase $buyNGetOneFreePromotionUseCase;
+    private BuyNGetOneFreePromotionImpl $buyNGetOneFreePromotionUseCase;
 
-    public function __construct(multipricedPromotionUseCase $multipricedPromotionUseCase, MealDealPromotionUseCase $mealDealPromotionUseCase, BuyNGetOneFreePromotionUseCase $buyNGetOneFreePromotionUseCase)
+    public function __construct(multipricedPromotionUseCase $multipricedPromotionUseCase, MealDealPromotionUseCase $mealDealPromotionUseCase, BuyNGetOneFreePromotionImpl $buyNGetOneFreePromotionUseCase)
     {
         $this->multipricedPromotionUseCase = $multipricedPromotionUseCase;
         $this->mealDealPromotionUseCase = $mealDealPromotionUseCase;

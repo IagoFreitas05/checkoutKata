@@ -8,7 +8,7 @@ use App\business\usecases\io\InputPromotionUseCase;
 /**
  * @implements UseCaseInterface<Product, float>
  */
-class BuyNGetOneFreePromotionUseCase
+class BuyNGetOneFreePromotionImpl implements \App\business\usecases\BuyNGetOneFreePromotionUseCase
 {
     /**
      * @param InputPromotionUseCase

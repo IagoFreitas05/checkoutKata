@@ -2,8 +2,8 @@
 
 namespace App\stategies;
 
-use App\adapter\businessUseCases\BuyNGetOneFreePromotionUseCase;
 use App\business\entities\Product;
+use App\business\usecases\BuyNGetOneFreePromotionUseCase;
 use App\business\usecases\io\InputPromotionUseCase;
 
 class BuyNGetOneFreePromotionStrategy implements PromotionStrategyInterface

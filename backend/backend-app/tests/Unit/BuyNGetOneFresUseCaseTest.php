@@ -1,6 +1,6 @@
 <?php
 
-use App\adapter\businessUseCases\BuyNGetOneFreePromotionUseCase;
+use App\adapter\businessUseCases\BuyNGetOneFreePromotionImpl;
 use App\business\entities\Product;
 
 describe("BuyNGetOneFresUseCase", function () {
@@ -16,7 +16,7 @@ describe("BuyNGetOneFresUseCase", function () {
             'product' => $product
         ];
 
-        $useCase = new BuyNGetOneFreePromotionUseCase();
+        $useCase = new BuyNGetOneFreePromotionImpl();
         $result = $useCase->execute($input);
         expect($result)->toBe(400.00);
     });
@@ -33,7 +33,7 @@ describe("BuyNGetOneFresUseCase", function () {
             'product' => $product
         ];
 
-        $useCase = new BuyNGetOneFreePromotionUseCase();
+        $useCase = new BuyNGetOneFreePromotionImpl();
         $result = $useCase->execute($input);
         expect($result)->toBe(200.00);
     });
@@ -50,7 +50,7 @@ describe("BuyNGetOneFresUseCase", function () {
             'product' => $product
         ];
 
-        $useCase = new BuyNGetOneFreePromotionUseCase();
+        $useCase = new BuyNGetOneFreePromotionImpl();
         $result = $useCase->execute($input);
         expect($result)->toBe(300.00);
     });
@@ -67,7 +67,7 @@ describe("BuyNGetOneFresUseCase", function () {
             'product' => $product
         ];
 
-        $useCase = new BuyNGetOneFreePromotionUseCase();
+        $useCase = new BuyNGetOneFreePromotionImpl();
         $result = $useCase->execute($input);
         expect($result)->toBe(300.00);
     });
